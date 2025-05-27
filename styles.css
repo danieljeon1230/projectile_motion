@@ -15,8 +15,8 @@ html, body {
 
 #zoom-controls {
   position: absolute;
-  top: 10px;
-  left: 35px;
+  top: 300px;
+  right: 150px;
   display: flex;
   flex-direction: column;
   gap: 2px;
