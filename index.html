@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projectile Motion Simulator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <canvas id="velocityGraph" class="side-graph" style="display: none;"></canvas>
+  <canvas id="forcesGraph" class="side-graph" style="display: none;"></canvas>
+
+  <div id="zoom-controls">
+    <button id="zoomIn">+</button>
+    <button id="zoomOut">−</button>
+  </div>
+
+  <div id="controls">
+    <h3>Projectile Parameters</h3>
+
+    <label for="velocity">Initial Velocity (m/s): <span id="velValue">25</span></label>
+    <input type="range" id="velocity" min="1" max="50" step="1" value="25" />
+
+    <label for="angle">Angle (°): <span id="angleValue">45</span></label>
+    <input type="range" id="angle" min="1" max="90" step="1" value="45" />
+
+    <label for="drag">Drag Coefficient: <span id="dragValue">0.025</span></label>
+    <input type="range" id="drag" min="0" max="0.05" step="0.005" value="0.025" />
+
+    <label for="gravity">Gravity (m/s²): <span id="gravityValue">9.8</span></label>
+    <input type="range" id="gravity" min="1" max="20" step="0.1" value="9.8" />
+
+    <label><input type="checkbox" id="showVelocity" /> Show Velocity: 
+      <span style="color: red;">Speed</span>,
+      <span style="color: blue;">Vx</span>,
+      <span style="color: green;">Vy</span>
+    </label>
+    <label><input type="checkbox" id="showForces" /> Show Forces: 
+      <span style="color: orange;">Drag</span>,
+      <span style="color: rgb(150, 75, 0);">Gravity</span>,
+      <span style="color: purple;">Net</span>
+    </label>
+
+    <button id="runBtn">Run Simulation</button>
+    <button id="pauseBtn">Pause/Resume</button>
+    <button id="resetBtn">Reset</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
